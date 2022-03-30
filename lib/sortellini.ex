@@ -6,7 +6,7 @@ defmodule Sortellini do
   """
 
   def sort_ini(file_path) do
-    out_file = get_target_path(file_path)
+    out_file = get_output_path(file_path)
 
     file_path
     |> sort!()
@@ -66,7 +66,7 @@ defmodule Sortellini do
   # from the input path to file, creates an output
   # path to file but with the file name suffixed with
   # path/to/<file-name>_sorted.<extension>
-  defp get_target_path(file_path) do
+  defp get_output_path(file_path) do
     dir = Path.dirname(file_path)
 
     [name, ext] =
