@@ -1,6 +1,13 @@
 # Sortellini
 
-**TODO: Add description**
+**Sortellini** sorts the content of an `.ini` file. The main purpose of this module is to ease the diff between two ini files where the sections are mixed up and the key values have no orther watsoever, this is especifically a pain with big ini files.
+
+```elixir
+file_path = "path/to/my.ini"
+Sortellini.sort_ini(file_path)
+# this will hopefully create a file "path/to/my_sorted.ini"
+```
+
 
 ## Installation
 
