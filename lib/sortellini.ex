@@ -48,6 +48,7 @@ defmodule Sortellini do
   # key2 = value 2
   defp tokenizer(ini_map) when is_map(ini_map) do
     Map.keys(ini_map)
+    |> Enum.sort()
     |> Enum.map(fn sec ->
       pairs = serialize_section(sec, ini_map)
 
@@ -71,18 +72,11 @@ defmodule Sortellini do
 
     [name, ext] =
       file_path
-      |> get_file_name()
+      |> Path.split()
+      |> List.last()
       |> String.split(".")
 
     Path.join(dir, "#{name}_sorted.#{ext}")
   end
 
-  # given a path to a file this function returns the file name
-  # with the extension
-  defp get_file_name(file_path) do
-    file_path
-    |> Path.dirname()
-    |> Path.split()
-    |> List.last()
-  end
 end
