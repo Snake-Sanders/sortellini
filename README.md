@@ -1,13 +1,15 @@
 # Sortellini
 
-**Sortellini** sorts the content of an `.ini` file. The main purpose of this module is to ease the diff between two `.ini` files where the sections are mixed up and the key values have no orther whatsoever, which it is a pain with big `.ini` files.
+**Sortellini** sorts in alphabetically order the content of a given `.ini` file. The main purpose of this module is to ease the diff between two `.ini` files where the sections are mixed up and the key values have no orther whatsoever, which it is a pain when dealing with big `.ini` files.
+
+The script uses the module `configparser_ex` and will ignore the comments
 
 ```elixir
-file_path = "path/to/my.ini"
-Sortellini.sort_ini(file_path)
-# this will hopefully create a file "path/to/my_sorted.ini"
+iex> file_path = "path/to/my.ini"
+iex> Sortellini.sort_ini(file_path)
+file stored in: path/to/my_sorted.ini
+:ok
 ```
-
 
 ## Installation
 
