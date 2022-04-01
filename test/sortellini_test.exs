@@ -16,7 +16,7 @@ defmodule SortelliniTest do
     """
 
     file = dir_path <> "plain.ini"
-    content = Sortellini.sort!(file)
+    content = Sortellini.sort_content(file)
 
     assert content == expected
   end
@@ -26,6 +26,7 @@ defmodule SortelliniTest do
     [sectionA]
     key1 = a
     key2 = b
+    key3 = c
 
     [sectionB]
     key1 = a
@@ -42,7 +43,7 @@ defmodule SortelliniTest do
     """
 
     file = dir_path <> "complex.ini"
-    content = Sortellini.sort!(file)
+    content = Sortellini.sort_content(file)
 
     assert content == expected
   end

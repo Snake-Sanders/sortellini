@@ -6,7 +6,7 @@ The script uses the module `configparser_ex` and will ignore the comments within
 
 ```elixir
 iex> file_path = "path/to/my.ini"
-iex> Sortellini.sort_ini(file_path)
+iex> Sortellini.sort_out(file_path)
 file stored in: path/to/my_sorted.ini
 :ok
 ```
