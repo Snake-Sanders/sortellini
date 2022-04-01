@@ -68,15 +68,7 @@ defmodule Sortellini do
   # path to file but with the file name suffixed with
   # path/to/<file-name>_sorted.<extension>
   defp get_output_path(file_path) do
-    dir = Path.dirname(file_path)
-
-    [name, ext] =
-      file_path
-      |> Path.split()
-      |> List.last()
-      |> String.split(".")
-
-    Path.join(dir, "#{name}_sorted.#{ext}")
+    ext = Path.extname(file_path)
+    String.replace_suffix(file_path, ext, "_sorted" <> ext)
   end
-
 end
